@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Simulator from "../components/simulator";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -76,6 +77,7 @@ export default function Home() {
           eget tortor pulvinar, efficitur libero sed, tempor tellus. Morbi id
           urna at eros tincidunt tempor.
         </p>
+        <Simulator />
       </main>
 
       <footer className={styles.footer}>
