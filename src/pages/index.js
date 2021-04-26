@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Image } from "react-bootstrap";
 import Simulator from "../components/simulator";
 import styles from "../styles/Home.module.css";
 
@@ -11,71 +12,61 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>Simulador de velocidad relativa Física 4</h1>
+        <h1>Velocidad relativista</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-          faucibus, felis ut congue mollis, erat eros gravida arcu, vitae
-          eleifend justo augue ac metus. Pellentesque in arcu tristique, aliquet
-          purus et, rhoncus risus. Aenean id lectus sed lorem dapibus dignissim.
-          Vivamus hendrerit pulvinar ipsum, eget maximus tortor euismod id.
-          Donec vel vehicula leo. Pellentesque interdum tortor libero, et
-          tincidunt quam luctus at. Sed ac elit et odio volutpat molestie.
-          Suspendisse dui elit, gravida at gravida vel, elementum bibendum enim.
-          Phasellus vel lobortis est. Vivamus ultrices dolor vel massa mattis,
-          at cursus ipsum viverra. Nam congue a lorem quis blandit. Vestibulum
-          luctus porttitor porta. Phasellus ac volutpat magna. Aenean molestie,
-          tortor sed mollis iaculis, dolor lacus rutrum orci, quis aliquam ex
-          arcu eget urna.
+          La velocidad de la luz es el límite de velocidad del universo, por lo
+          que se deduce que ningún observador, verá cualquier otro observador
+          acercarse o alejarse a una velocidad mayor que c. Pero ¿y si los
+          observadores A y B se mueven al mismo tiempo en direcciones opuestas
+          acercándose con velocidades cercanas a c, según son vistos por un
+          observador externo? ¿Cómo medirán A y B sus velocidades relativas?.
+          Este es un ejemplo de adición de velocidades de Einstein. En el
+          cálculo de abajo, se toman como positivas las velocidades hacia la
+          derecha.
+        </p>
+        <Image src="/images/EcuacionesVelocidadRelativa.png" fluid></Image>
+        <h2>Ley relativista</h2>
+        <p>
+          La ley relativista de composición de velocidades implica que la suma
+          de dos velocidades no excede nunca a la de la luz y que por más que
+          incrementemos sucesivamente la velocidad de un objeto, éste nunca
+          sobrepasará la velocidad de la luz. La fórmula para sumar dos
+          velocidades se deduce de las ecuaciones que transforman tiempo y
+          espacio y es donde u y v son las velocidades que queremos sumar, c la
+          velocidad de la luz y u´ la velocidad resultante.
+        </p>
+        <Image src="/images/UEcuacion.png" fluid></Image>
+        <p>
+          Comprobad que si sumamos dos velocidades menores o iguales que c, el
+          resultado es siempre menor o igual que c.
         </p>
         <p>
-          Pellentesque pulvinar dolor ligula, sit amet pulvinar mi posuere et.
-          Nullam a molestie sem. Morbi commodo felis sapien, nec venenatis augue
-          varius vel. Cras eget elit rhoncus, pharetra velit vitae, vestibulum
-          ante. Aenean pellentesque risus in dignissim viverra. Duis porttitor
-          nunc ac volutpat posuere. Etiam tincidunt vestibulum consequat. Sed ut
-          fermentum nisl. Ut quis sem eget tellus commodo posuere. In ac mattis
-          mauris. Aenean lobortis, diam quis consequat venenatis, lacus tortor
-          placerat tellus, nec vestibulum leo arcu commodo lorem. Phasellus
-          hendrerit neque orci, a sagittis dui tincidunt ut. Proin ultrices
-          mauris quis libero interdum tempus at et sem. Sed aliquam tempor
-          pretium.
+          La teoría de Einstein establece un límite de velocidad infranqueable,
+          la barrera de la velocidad de la luz. Desde su descubrimiento, a
+          principios del siglo XX, muchos científicos han intentado derribar
+          esta barrera proponiendo teorías y realizando experimentos para buscar
+          partículas que se movieran a velocidades superiores a la de la luz.
         </p>
         <p>
-          Aliquam erat volutpat. Morbi mattis ante neque. Pellentesque pulvinar
-          justo vitae iaculis faucibus. Etiam rhoncus ex ut lobortis ornare. Sed
-          varius odio nec bibendum facilisis. Orci varius natoque penatibus et
-          magnis dis parturient montes, nascetur ridiculus mus. Aenean interdum
-          gravida viverra. Cras pellentesque arcu at suscipit rhoncus. Quisque
-          at condimentum nibh, non suscipit ipsum. Proin vitae velit eget sapien
-          dapibus aliquam et vitae nisl. Etiam laoreet, metus ac dignissim
-          ultrices, risus ligula tincidunt sem, non laoreet orci turpis pulvinar
-          orci. Sed eu elit ipsum. Curabitur ullamcorper blandit egestas. Fusce
-          feugiat odio et tristique eleifend. Aliquam luctus a risus nec
-          pellentesque. Pellentesque nunc lacus, hendrerit at arcu cursus,
-          rutrum placerat felis.
-        </p>
-        <p>
-          Proin fringilla dignissim justo, in pulvinar lectus accumsan a. Sed
-          eget massa non elit facilisis accumsan. Sed condimentum venenatis
-          sapien. Nullam varius justo velit, ac egestas ante bibendum quis. Sed
-          egestas libero sit amet risus maximus, eu tincidunt leo tincidunt.
-          Donec eget varius dolor, ac pulvinar massa. Pellentesque sit amet
-          ornare sem, placerat hendrerit quam. Sed faucibus feugiat ipsum, sit
-          amet finibus arcu lacinia in. Proin facilisis leo urna, ut commodo
-          ante dictum posuere. Praesent vitae vehicula quam. Morbi tortor lorem,
-          iaculis vitae sapien faucibus, dictum ornare arcu. Nam vitae risus
-          vitae elit sollicitudin rutrum. Duis et metus placerat, placerat
-          tellus at, scelerisque dolor.
-        </p>
-        <p>
-          Phasellus vel finibus turpis. Praesent viverra porttitor convallis.
-          Morbi commodo, mi in rutrum interdum, leo massa condimentum dui, in
-          sollicitudin sem elit et ante. Vivamus laoreet scelerisque nunc, et
-          semper enim mollis in. Nulla lacus ante, convallis sagittis ornare id,
-          ultrices quis dolor. Aliquam vitae nisl ultrices, scelerisque arcu
-          vel, imperdiet massa. Etiam ac aliquam eros, non consequat quam. Morbi
-          eget tortor pulvinar, efficitur libero sed, tempor tellus. Morbi id
-          urna at eros tincidunt tempor.
+          En muchas ocasiones los científicos han ideado experimentos y
+          analizado fenómenos en los que parecía que se alcanzaban velocidades
+          superiores a la de la luz. Muchos de ellos se basan en una
+          interpretación errónea de lo que es la velocidad de un objeto. Por
+          ejemplo, supongamos que observamos dos objetos que se mueven cada uno
+          con una velocidad 0,6 veces la de la luz apartándose el uno del otro.
+          La separación entre ambos objetos crecerá a una velocidad 1,2 veces la
+          de la luz. Sin embargo, no hay ningún cuerpo moviéndose a esta
+          velocidad, luego no se viola la ley de composición de velocidades.
+          Otro ejemplo sencillo es el siguiente: imaginemos una cadena de
+          bombillas muy larga (como las de los juegos de luces de Navidad)
+          conectada a un dispositivo (podemos poner un reloj independiente a
+          cada bombilla) de tal manera que se vayan encendiendo y apagando una
+          bombilla detrás de otra, creando en nuestro cerebro la impresión de
+          que un punto luminoso se va desplazando. Nada nos impide haber
+          programado los relojes para que el punto luminoso ficticio recorra la
+          cadena a mayor velocidad que la de la luz. Sin embargo, es obvio que
+          lo que se está moviendo no es un objeto real (ninguna bombilla se
+          mueve). Es nuestro cerebro el que crea la ilusión de movimiento.
         </p>
         <Simulator />
       </main>
