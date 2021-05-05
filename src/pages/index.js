@@ -11,7 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="text-justify">
         <h1>Velocidad relativista</h1>
         <p>
           La velocidad de la luz es el límite de velocidad del universo, por lo
