@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { Container, Row, Col, Image, Form } from "react-bootstrap";
 
 export default function Simulator() {
+  const [marco2Image, setMarco2Image] = useState(
+    "/images/cohete-estacionado.jpeg"
+  );
+  const [eventoImage, setEventoImage] = useState(
+    "/images/cohete-estacionado.jpeg"
+  );
   const [fisicaGalileana, setFisicaGalileana] = useState(true);
   const [v, setV] = useState("");
   const [v1, setV1] = useState("");
@@ -71,7 +77,13 @@ export default function Simulator() {
       <Row className="ml-3 mr-3">
         <Col>
           <Image
-            src="https://via.placeholder.com/150"
+            src={
+              v > 0
+                ? "/images/cohete-derecha.jpg"
+                : v < 0
+                ? "/images/cohete-izquierda.jpeg"
+                : "/images/cohete-estacionado.jpeg"
+            }
             fluid
             className="pt-2 pb-2"
           ></Image>
@@ -93,7 +105,13 @@ export default function Simulator() {
         </Col>
         <Col>
           <Image
-            src="https://via.placeholder.com/150"
+            src={
+              v1 > 0
+                ? "/images/cohete-derecha.jpg"
+                : v1 < 0
+                ? "/images/cohete-izquierda.jpeg"
+                : "/images/cohete-estacionado.jpeg"
+            }
             fluid
             className="pt-2 pb-2"
           ></Image>
