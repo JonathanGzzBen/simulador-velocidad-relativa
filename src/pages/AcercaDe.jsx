@@ -1,0 +1,130 @@
+import { Col, Container, Image, Row, Table } from "react-bootstrap";
+
+const miembros = [
+  {
+    title: "Desarrollador",
+    nombre: "Jonathan González Benavides",
+    description: (
+      <p>
+        Hola, soy Jonathan González Benavides y soy quien hizo este simulador.
+        Puedes conocerme mejor y ver mis otros proyectos{" "}
+        <a href="https://jonathangzzben.github.io" target="_blank">
+          en mi sitio web.
+        </a>
+      </p>
+    ),
+    imageUrl: "/images/jonathan.png",
+    matricula: "1867000",
+    carrera: "ITS",
+  },
+  {
+    title: "Investigador",
+    nombre: "Ricardo Hernández Cavazos",
+    description: (
+      <p>
+        Hola, soy Ricardo Hernández Cavazos y soy quien buscó la información
+        teórica para este simulador.
+      </p>
+    ),
+    imageUrl: "",
+    matricula: "1919238",
+    carrera: "IMT",
+  },
+  {
+    title: "Diseñador",
+    nombre: "Missael Alexis Porras Rocha",
+    description: (
+      <p>
+        Me llamo Missael Alexis Porras Rocha y soy quien diseñó el
+        comportamiento del simulador.
+      </p>
+    ),
+    imageUrl: "",
+    matricula: "1738482",
+    carrera: "IMA",
+  },
+  {
+    title: "Recursos gráficos",
+    nombre: "Ariadna Selene Aguilar Morales",
+    description: (
+      <p>
+        Ariadna Selene Aguilar Morales: Soy quien reclutó información y recursos
+        gráficos para el simulador
+      </p>
+    ),
+    imageUrl: "/images/ariadna.jpeg",
+    matricula: "1898734",
+    carrera: "IAS",
+  },
+  {
+    title: "Recursos gráficos",
+    nombre: "Alejandra Coss Patiño",
+    description: (
+      <p>
+        Hola, soy Alejandra Coss Patiño y soy quien buscó los recurso gráficos
+        utilizados en la investigación.
+      </p>
+    ),
+    imageUrl: "",
+    matricula: "1911016",
+    carrera: "ITS",
+  },
+];
+
+const getMiembroElement = ({ title, description, imageUrl }) => (
+  <Container>
+    <Row>
+      <h2>{title}</h2>
+    </Row>
+    <Row className="justify-content-center">
+      <>
+        {imageUrl && (
+          <Col sm={10} md={4}>
+            <Image fluid src={imageUrl} className="pt-1 pb-3" />
+          </Col>
+        )}
+        <Col md={6}>{description}</Col>
+      </>
+    </Row>
+  </Container>
+);
+
+export default function AcercaDe() {
+  return (
+    <Container fluid>
+      <Row>
+        <h1>Acerca De</h1>
+      </Row>
+      {miembros && miembros.map((miembro) => getMiembroElement(miembro))}
+      {getMiembroElement(
+        "Recursos gráficos",
+        <p>
+          Soy quien recopiló información y recursos gráficos para el simulador.
+        </p>,
+        "/images/ariadna.jpeg"
+      )}
+
+      <Row>
+        <Table hover striped bordered>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Matrícula</th>
+              <th>Carrera</th>
+            </tr>
+          </thead>
+          <tbody>
+            {miembros &&
+              miembros.map(({ nombre, matricula, carrera }) => (
+                <tr>
+                  <td>{nombre}</td>
+                  <td>{matricula}</td>
+                  <td>{carrera}</td>
+                </tr>
+              ))}
+          </tbody>
+        </Table>
+      </Row>
+    </Container>
+  );
+}
