@@ -7,39 +7,38 @@ export default function Simulator() {
   const [v1, setV1] = useState("");
   const [v2, setV2] = useState("");
 
+  const calculateV1 = (v, v2, fisicaGalileana) =>
+    fisicaGalileana
+      ? Number(v2) + Number(v)
+      : (Number(v2) + Number(v)) / (1 + Number(v2) * Number(v));
+
+  const calculateV2 = (v, v1, fisicaGalileana) =>
+    fisicaGalileana
+      ? Number(v1) - Number(v)
+      : (Number(v1) - Number(v)) / (1 - Number(v1) * Number(v));
+
   const handleVChange = (v) => {
     setV(v);
     if (v1 === "" && v2 === "") {
     } else {
-      if (fisicaGalileana) {
-        setV2(Number(v1) - Number(v));
-      } else {
-        setV2((Number(v1) - Number(v)) / (1 - Number(v1) * Number(v)));
-      }
+      setV2(calculateV2(v, v1, fisicaGalileana));
     }
   };
 
   const handleV1Change = (v1) => {
     setV1(v1);
-    if (fisicaGalileana) {
-      setV2(Number(v1) - Number(v));
-    } else {
-      setV2((Number(v1) - Number(v)) / (1 - Number(v1) * Number(v)));
-    }
+    setV2(calculateV2(v, v1, fisicaGalileana));
   };
 
   const handleV2Change = (v2) => {
     setV2(v2);
-    if (fisicaGalileana) {
-      setV1(Number(v2) + Number(v));
-    } else {
-      setV1((Number(v2) + Number(v)) / (1 + Number(v2) * Number(v)));
-    }
+    setV1(calculateV1(v, v2, fisicaGalileana));
   };
 
   const handleTipoFisicaChange = (tipoFisica) => {
-    setFisicaGalileana(tipoFisica !== "galileana");
-    handleVChange(v);
+    const fisicaGalileana = tipoFisica === "galileana";
+    setFisicaGalileana(fisicaGalileana);
+    setV2(calculateV2(v, v1, fisicaGalileana));
   };
 
   return (
