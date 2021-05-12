@@ -65,7 +65,7 @@ const miembros = [
         utilizados en la investigación.
       </p>
     ),
-    imageUrl: "",
+    imageUrl: "/images/alejandra.jpeg",
     matricula: "1911016",
     carrera: "ITS",
   },
