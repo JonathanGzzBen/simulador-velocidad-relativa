@@ -23,28 +23,64 @@ export default function Simulator() {
       ? Number(v1) - Number(v)
       : (Number(v1) - Number(v)) / (1 - Number(v1) * Number(v));
 
-  const handleVChange = (v) => {
-    setV(v);
-    if (v1 === "" && v2 === "") {
-    } else {
-      setV2(calculateV2(v, v1, fisicaGalileana));
+  const setIfIsValidPhysicalPhysicsString = (value, setter) => {
+    if (0 <= Number(value) && Number(value) < 1) {
+      setter();
+    } else if (value === "-" || (-1 < Number(value) && Number(value) < 0)) {
+      setter();
     }
   };
 
+  const handleVChange = (v) => {
+    const setVAndCalculate = () => {
+      setV(v);
+      if (v1 === "") {
+      } else {
+        setV2(calculateV2(v, v1, fisicaGalileana));
+      }
+    };
+
+    fisicaGalileana
+      ? setVAndCalculate()
+      : setIfIsValidPhysicalPhysicsString(v, setVAndCalculate);
+  };
+
   const handleV1Change = (v1) => {
-    setV1(v1);
-    setV2(calculateV2(v, v1, fisicaGalileana));
+    const setV1AndCalculate = () => {
+      setV1(v1);
+      setV2(calculateV2(v, Number(v1), fisicaGalileana));
+    };
+    fisicaGalileana
+      ? setV1AndCalculate()
+      : setIfIsValidPhysicalPhysicsString(v1, setV1AndCalculate);
   };
 
   const handleV2Change = (v2) => {
-    setV2(v2);
-    setV1(calculateV1(v, v2, fisicaGalileana));
+    const setV2AndCalculate = () => {
+      setV2(v2);
+      setV1(calculateV1(v, Number(v2), fisicaGalileana));
+    };
+    fisicaGalileana
+      ? setV2AndCalculate()
+      : setIfIsValidPhysicalPhysicsString(v2, setV2AndCalculate);
   };
 
   const handleTipoFisicaChange = (tipoFisica) => {
     const fisicaGalileana = tipoFisica === "galileana";
     setFisicaGalileana(fisicaGalileana);
-    setV2(calculateV2(v, v1, fisicaGalileana));
+    if (fisicaGalileana) {
+      setV2(calculateV2(v, v1, fisicaGalileana));
+    } else {
+      if (!(-1 < Number(v1) && Number(v1) < 1)) {
+        setV1("0");
+      }
+      if (!(-1 < Number(v2) && Number(v2) < 1)) {
+        setV2("0");
+      }
+      if (!(-1 < Number(v) && Number(v) < 1)) {
+        setV("0");
+      }
+    }
   };
 
   return (
