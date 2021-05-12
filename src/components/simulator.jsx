@@ -78,10 +78,10 @@ export default function Simulator() {
           <Image
             src={
               v > 0
-                ? "/images/cohete-derecha.jpg"
+                ? "/images/rocket-right.png"
                 : v < 0
-                ? "/images/cohete-izquierda.jpeg"
-                : "/images/cohete-estacionado.jpeg"
+                ? "/images/rocket-left.png"
+                : "/images/rocket.png"
             }
             fluid
             className="pt-2 pb-2"
@@ -106,10 +106,10 @@ export default function Simulator() {
           <Image
             src={
               v1 > 0
-                ? "/images/cohete-derecha.jpg"
+                ? "/images/rocket-right.png"
                 : v1 < 0
-                ? "/images/cohete-izquierda.jpeg"
-                : "/images/cohete-estacionado.jpeg"
+                ? "/images/rocket-left.png"
+                : "/images/rocket.png"
             }
             fluid
             className="pt-2 pb-2"
@@ -142,11 +142,7 @@ export default function Simulator() {
           </Container>
         </Col>
         <Col>
-          <Image
-            src="https://images.vexels.com/media/users/3/157970/isolated/preview/c156b4270aea292b9b335dd463ea17eb-icono-de-planeta-tierra-icono-de-tierra-by-vexels.png"
-            fluid
-            className="pt-2 pb-2"
-          ></Image>
+          <Image src="/images/earth.png" fluid className="pt-2 pb-2"></Image>
           <Container fluid style={{ padding: "0" }}>
             <Form>
               <h2>Marco 1</h2>
