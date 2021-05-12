@@ -38,10 +38,10 @@ export default function Simulator() {
           <Image
             src={
               v > 0
-                ? "/images/cohete-derecha.jpg"
+                ? "/images/rocket-right.png"
                 : v < 0
-                ? "/images/cohete-izquierda.jpeg"
-                : "/images/cohete-estacionado.jpeg"
+                ? "/images/rocket-left.png"
+                : "/images/rocket.png"
             }
             fluid
             className="pt-2 pb-2"
@@ -66,10 +66,10 @@ export default function Simulator() {
           <Image
             src={
               v1 > 0
-                ? "/images/cohete-derecha.jpg"
+                ? "/images/rocket-right.png"
                 : v1 < 0
-                ? "/images/cohete-izquierda.jpeg"
-                : "/images/cohete-estacionado.jpeg"
+                ? "/images/rocket-left.png"
+                : "/images/rocket.png"
             }
             fluid
             className="pt-2 pb-2"
