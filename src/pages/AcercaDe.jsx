@@ -104,7 +104,8 @@ export default function AcercaDe() {
         "/images/ariadna.jpeg"
       )}
 
-      <Row>
+      <Row className="pt-3">
+        <h2>Datos</h2>
         <Table hover striped bordered>
           <thead>
             <tr>
