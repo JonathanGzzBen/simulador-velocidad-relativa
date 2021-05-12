@@ -8,6 +8,7 @@ export default function Simulator() {
   const [eventoImage, setEventoImage] = useState(
     "/images/cohete-estacionado.jpeg"
   );
+  const [fisicaGalileana, setFisicaGalileana] = useState(true);
   const [v, setV] = useState("");
   const [v1, setV1] = useState("");
   const [v2, setV2] = useState("");
@@ -16,23 +17,63 @@ export default function Simulator() {
     setV(v);
     if (v1 === "" && v2 === "") {
     } else {
-      setV(v);
-      setV1(Number(v2) + Number(v));
+      if (fisicaGalileana) {
+        setV2(Number(v1) - Number(v));
+      } else {
+        setV2((Number(v1) - Number(v)) / (1 - Number(v1) * Number(v)));
+      }
     }
   };
 
   const handleV1Change = (v1) => {
     setV1(v1);
-    setV2(Number(v1) - Number(v));
+    if (fisicaGalileana) {
+      setV2(Number(v1) - Number(v));
+    } else {
+      setV2((Number(v1) - Number(v)) / (1 - Number(v1) * Number(v)));
+    }
   };
 
   const handleV2Change = (v2) => {
     setV2(v2);
-    setV1(Number(v2) + Number(v));
+    if (fisicaGalileana) {
+      setV1(Number(v2) + Number(v));
+    } else {
+      setV1((Number(v2) + Number(v)) / (1 + Number(v2) * Number(v)));
+    }
+  };
+
+  const handleTipoFisicaChange = (tipoFisica) => {
+    setFisicaGalileana(tipoFisica !== "galileana");
+    handleVChange(v);
   };
 
   return (
     <Container className="mt-4 mb-4">
+      <Row className="ml-3 mr-3">
+        <Form>
+          <fieldset>
+            <Form.Group
+              controlId="tipo-fisica"
+              onChange={(e) => handleTipoFisicaChange(e.target.value)}
+            >
+              <Form.Check
+                type="radio"
+                value="galileana"
+                defaultChecked
+                name="tipo-fisica"
+                label="Física Galileana"
+              />
+              <Form.Check
+                type="radio"
+                value="clasica"
+                name="tipo-fisica"
+                label="Física Clásica"
+              />
+            </Form.Group>
+          </fieldset>
+        </Form>
+      </Row>
       <Row className="ml-3 mr-3">
         <Col>
           <Image
