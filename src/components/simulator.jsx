@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Image, Form } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Image,
+  Form,
+  InputGroup,
+  FormControl,
+} from "react-bootstrap";
 
 export default function Simulator() {
-  const [marco2Image, setMarco2Image] = useState(
-    "/images/cohete-estacionado.jpeg"
-  );
-  const [eventoImage, setEventoImage] = useState(
-    "/images/cohete-estacionado.jpeg"
-  );
   const [fisicaGalileana, setFisicaGalileana] = useState(true);
   const [v, setV] = useState("");
   const [v1, setV1] = useState("");
@@ -125,16 +127,20 @@ export default function Simulator() {
           <Container fluid style={{ padding: "0" }}>
             <Form>
               <h2>Marco 2</h2>
-              <Form.Group controlId="v-input">
-                <Form.Label>v</Form.Label>
-                <Form.Control
-                  value={v}
-                  type="text"
+              <Form.Label>v</Form.Label>
+              <InputGroup>
+                <FormControl
                   placeholder="v"
+                  aria-label="v"
+                  aria-describedby="c-v"
+                  value={v}
                   onChange={(e) => handleVChange(e.target.value)}
                   autoComplete="off"
                 />
-              </Form.Group>
+                <InputGroup.Append>
+                  <InputGroup.Text id="c-v">c</InputGroup.Text>
+                </InputGroup.Append>
+              </InputGroup>
             </Form>
           </Container>
         </Col>
@@ -153,27 +159,34 @@ export default function Simulator() {
           <Container fluid style={{ padding: "0" }}>
             <Form>
               <h2>Evento</h2>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>v1</Form.Label>
-                <Form.Control
-                  value={v1}
-                  v1="v1-input"
-                  type="text"
+              <Form.Label>v1</Form.Label>
+              <InputGroup>
+                <FormControl
                   placeholder="v1"
+                  aria-label="v1"
+                  aria-describedby="c-v1"
+                  value={v1}
                   onChange={(e) => handleV1Change(e.target.value)}
                   autoComplete="off"
                 />
-              </Form.Group>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>v2</Form.Label>
-                <Form.Control
-                  value={v2}
-                  type="text"
+                <InputGroup.Append>
+                  <InputGroup.Text id="c-v1">c</InputGroup.Text>
+                </InputGroup.Append>
+              </InputGroup>
+              <Form.Label>v2</Form.Label>
+              <InputGroup>
+                <FormControl
                   placeholder="v2"
+                  aria-label="v2"
+                  aria-describedby="c-v2"
+                  value={v2}
                   onChange={(e) => handleV2Change(e.target.value)}
                   autoComplete="off"
                 />
-              </Form.Group>
+                <InputGroup.Append>
+                  <InputGroup.Text id="c-v2">c</InputGroup.Text>
+                </InputGroup.Append>
+              </InputGroup>
             </Form>
           </Container>
         </Col>
